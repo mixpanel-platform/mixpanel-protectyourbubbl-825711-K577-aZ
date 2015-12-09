@@ -66,7 +66,7 @@
         $.when(dataExported).done(function(dataExtracted) {
           var sessionData = dataExtracted["data"]["values"]
           console.log(sessionData)
-
+        */
           $('</div><br clear="all" /><span>' + "Site Visits by Campaign Source" + '</span>').css({
               'background': 'white',
               'border': '1px solid #7a8195',
@@ -77,7 +77,7 @@
               'margin-top': '10px',
               'padding': '10px'            
             }).appendTo('body');
-          
+          /*
           $('<div class="sessionData"></div>').css({'width':'100%', 'float':'left'}).appendTo('body').MPChart({
               chartType: 'line',
               data: sessionData
