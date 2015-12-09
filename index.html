@@ -57,7 +57,13 @@
         $.when(appInstall).done(function(appInstall) {
           var appInstallData = appInstall.values()
           
-           $('<span>' + "Site Visits by Campaign Source" + '</span>').css({
+          
+          $('<div class="first"></div>').css({'width':'100%', 'float':'left'}).appendTo('body').MPChart({
+            chartType: 'line',
+            data: appInstallData
+          });
+          
+          $('<span>' + "Site Visits by Campaign Source" + '</span>').css({
             'background': 'white',
             'border': '1px solid #7a8195',
             'border-radius': '5px',
@@ -67,11 +73,6 @@
             'margin-top': '10px',
             'padding': '10px'
           }).appendTo('body');
-          
-          $('<div class="first"></div>').css({'width':'100%', 'float':'left'}).appendTo('body').MPChart({
-            chartType: 'line',
-            data: appInstallData
-          });
                 
           $('<div class="second"></div>').css({'width':'460px', 'float':'left'}).appendTo('body').MPChart({
               chartType: 'bar',
