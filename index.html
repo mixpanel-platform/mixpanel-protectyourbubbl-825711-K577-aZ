@@ -18,7 +18,7 @@
         
         // Events Data
         var overallData = MP.api.events('Clicked Get Quote', 'Your Quote', 'Register', 'Checkout - Review and Complete', {
-            from: moment().subtract(6, 'months'),
+            from: moment().subtract(5, 'months'),
             unit: 'week'
         });
         
@@ -46,7 +46,7 @@
           eventTable.MPTable('setData', overallData);
         });
         
-        
+        /*
         // Session Data
         var sessionData = {}
         var dataExported = MP.api.query('/api/2.0/segmentation/numeric/', {
@@ -93,20 +93,20 @@
               data: sessionData
           })
         });
-          
+        */
           
         // App Install Event by Campaign Source
-        event = 'App Install'
+        event = 'Site Visit'
       
         var appInstall = MP.api.segment(event, 'Campaign Source', {
-            from: moment().subtract(6, 'months'),
+            from: moment().subtract(5, 'months'),
             unit: 'week'
         });
         
         $.when(appInstall).done(function(appInstall) {
           var appInstallData = appInstall.values()
           
-          $('<span>' + "App Install Event by Campaign Source" + '</span>').css({
+          $('<span>' + "Site Visits by Campaign Source" + '</span>').css({
             'background': 'white',
             'border': '1px solid #7a8195',
             'border-radius': '5px',
