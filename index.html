@@ -17,13 +17,13 @@
      MP.api.ready(function() {
         
         // Events Data
-        var overallData = MP.api.events('Get Quote', 'Site Visit', 'Your Quote', 'Checkout - Review and Complete', {
+        var overallData = MP.api.events('Clicked Get Quote', 'Your Quote', 'Register', 'Checkout - Review and Complete', {
             from: moment().subtract(6, 'months'),
             unit: 'week'
         });
         
         $.when(overallData).done(function(overallData) { 
-          $('<span>' + "Events by Campaign Source" + '</span>').css({
+          $('<span>' + "Top Events - Quote Funnel" + '</span>').css({
               'background': 'white',
               'border': '1px solid #7a8195',
               'border-radius': '5px',
