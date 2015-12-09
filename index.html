@@ -52,8 +52,8 @@
         var dataExported = MP.api.query('/api/2.0/segmentation/numeric/', {
             from: moment().subtract(6, 'months'),
             to: moment(),
-            event: 'Session End',
-            on: 'properties["Session Time"]',
+            event: 'Site Visit',
+            on: 'properties["Site Visit"]',
             unit: 'week'
         }, {dataType:'json'})
         .done(function(json) {
@@ -67,7 +67,7 @@
           var sessionData = dataExtracted["data"]["values"]
           console.log(sessionData)
 
-          $('</div><br clear="all" /><span>' + "Session Time by Campaign Source" + '</span>').css({
+          $('</div><br clear="all" /><span>' + "Site Visits by Campaign Source" + '</span>').css({
               'background': 'white',
               'border': '1px solid #7a8195',
               'border-radius': '5px',
